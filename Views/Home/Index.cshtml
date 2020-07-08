@@ -1,0 +1,23 @@
+﻿@model TestProject.Models.Cheeses
+@{
+    ViewBag.Title = "Home Page";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+<div>
+    <h1>Cheese Factory</h1>
+</div>
+
+<div class="row">
+    @foreach (var c in Model.cheeses)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => c.CheeseNameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => c.ManufacturerNameEn)
+            </td>
+        </tr>
+    }
+</div>
